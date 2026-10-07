@@ -252,7 +252,7 @@
 
   // ── Open / close ────────────────────────────────────────────────────────
   function openDropdown() {
-    catDrop.hidden = false;
+    catDrop.classList.add('is-open');
     catBtn.setAttribute('aria-expanded', 'true');
     // focus first link
     var first = catDrop.querySelector('a');
@@ -260,13 +260,13 @@
   }
 
   function closeDropdown() {
-    catDrop.hidden = true;
+    catDrop.classList.remove('is-open');
     catBtn.setAttribute('aria-expanded', 'false');
   }
 
   catBtn.addEventListener('click', function (e) {
     e.stopPropagation();
-    var isOpen = catBtn.getAttribute('aria-expanded') === 'true';
+    var isOpen = catDrop.classList.contains('is-open');
     if (isOpen) {
       closeDropdown();
     } else {
@@ -276,7 +276,7 @@
 
   // ESC closes
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && catBtn.getAttribute('aria-expanded') === 'true') {
+    if (e.key === 'Escape' && catDrop.classList.contains('is-open')) {
       closeDropdown();
       catBtn.focus();
     }
@@ -285,7 +285,7 @@
   // Click outside closes
   document.addEventListener('click', function (e) {
     if (!catBtn.contains(e.target) && !catDrop.contains(e.target)) {
-      if (catBtn.getAttribute('aria-expanded') === 'true') closeDropdown();
+      if (catDrop.classList.contains('is-open')) closeDropdown();
     }
   });
 

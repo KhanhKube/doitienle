@@ -44,7 +44,7 @@ if (!defined('ABSPATH')) {
 				<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 				<span>Danh mục</span>
 			</button>
-			<ul id="cat-drop" class="cat-drop" role="listbox" aria-label="Danh mục nội dung" hidden></ul>
+			<ul id="cat-drop" class="cat-drop" role="listbox" aria-label="Danh mục nội dung"></ul>
 		</div>
 		<a class="btn head-call" href="tel:<?php echo esc_attr(doitienle_phone()); ?>"><?php echo esc_html(doitienle_call_label()); ?></a>
 	</div>
