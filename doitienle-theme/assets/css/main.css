@@ -51,6 +51,11 @@ p,
   font-family: var(--sans);
 }
 /* ─── End font consistency ────────────────────────────────────────────────── */
+
+/* Trang chủ: bỏ padding-bottom dư vì chỉ có hero section */
+body.is-front-page {
+  padding-bottom: 0;
+}
 :root {
   --red: #DC2626;
   --red-dark: #B91C1C;
