@@ -8,8 +8,8 @@ if (!defined('ABSPATH')) {
 		<h1>Dịch vụ đổi tiền lẻ</h1>
 		<p>Từ 500đ đến 20.000đ. Gọi là có, giao tận nơi, phục vụ 24/7, không giới hạn số lượng. Nhân viên báo phí theo ngày.</p>
 		<p class="jump">
-			<a href="#catalogue">Mục lục</a>
 			<a href="#faq">Câu hỏi thường gặp</a>
+			<a href="#ty-gia">Đổi mệnh giá</a>
 		</p>
 		<a class="btn" href="tel:<?php echo esc_attr(doitienle_phone()); ?>"><?php echo esc_html(doitienle_call_label()); ?></a>
 	</header>
@@ -26,75 +26,6 @@ if (!defined('ABSPATH')) {
 					</article>
 				<?php endforeach; ?>
 			</div>
-		</div>
-	</section>
-
-	<section class="band band-tint" id="catalogue">
-		<div class="wrap">
-			<h2>Mục lục nội dung</h2>
-			<p class="lede">Chọn phần bạn muốn xem — click là tới ngay.</p>
-			<nav class="toc-nav" aria-label="Mục lục trang dịch vụ">
-				<a href="#menh-gia-chon">
-					<span class="toc-num">01</span>
-					<span class="toc-label">Chọn mệnh giá cần đổi</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#dac-tinh">
-					<span class="toc-num">02</span>
-					<span class="toc-label">Đặc tính mệnh giá theo từng việc</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#kiem-tra">
-					<span class="toc-num">03</span>
-					<span class="toc-label">Kiểm tra cọc nguyên niêm phong</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#phi-thap">
-					<span class="toc-num">04</span>
-					<span class="toc-label">Phí thấp và ít tăng</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#doi-buon">
-					<span class="toc-num">05</span>
-					<span class="toc-label">Quyền lợi khách đổi buôn</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#cach-dat">
-					<span class="toc-num">06</span>
-					<span class="toc-label">Cách đặt tiền</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#ty-gia">
-					<span class="toc-num">07</span>
-					<span class="toc-label">Đổi mệnh giá (công cụ tính)</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#ly-do">
-					<span class="toc-num">08</span>
-					<span class="toc-label">Khách gọi lại vì những điều này</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#doi-tuong">
-					<span class="toc-num">09</span>
-					<span class="toc-label">Ai hay cần đổi</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#khu-vuc">
-					<span class="toc-num">10</span>
-					<span class="toc-label">Giao tận nơi ở các tỉnh này</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#faq">
-					<span class="toc-num">11</span>
-					<span class="toc-label">Câu hỏi thường gặp (FAQ)</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-				<a href="#tin-tuc">
-					<span class="toc-num">12</span>
-					<span class="toc-label">Tin tức mới</span>
-					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-				</a>
-			</nav>
 		</div>
 	</section>
 
