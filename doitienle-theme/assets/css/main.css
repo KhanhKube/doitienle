@@ -211,6 +211,8 @@ main, .site-foot { position: relative; z-index: 1; }
   display: flex;
   align-items: center;
   gap: 4px;
+  flex: 1;
+  justify-content: center;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -232,7 +234,8 @@ main, .site-foot { position: relative; z-index: 1; }
 /* ─── Category dropdown ──────────────────────────────────────────────────── */
 .cat-wrap {
   position: relative;
-  margin-left: auto;
+  margin-left: 0;
+  flex: none;
 }
 .cat-btn {
   display: inline-flex;
@@ -240,8 +243,28 @@ main, .site-foot { position: relative; z-index: 1; }
   gap: 7px;
   min-height: 44px;
   padding: 0 16px;
+  border-radius: 999px;
+  border: 1.5px solid var(--red);
+  background: transparent;
+  color: var(--red);
+  font-family: var(--display);
   font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
+.cat-btn:hover,
+.cat-btn[aria-expanded="true"] {
+  background: var(--red);
+  color: var(--cream);
+  border-color: var(--red);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.28);
+  transform: translateY(-1px);
+}
+.cat-btn:active { transform: scale(0.97); }
 .cat-btn svg { flex: none; }
 
 .cat-drop {
@@ -1282,6 +1305,7 @@ a.contact-mark:hover { color: var(--gold-soft); }
 @media (max-width: 859px) {
   .nav-toggle { display: inline-flex; margin-left: auto; }
   .cat-wrap { margin-left: 0; }
+  .cat-btn { padding: 0 12px; gap: 5px; }
   .menu {
     display: none;
     position: absolute;

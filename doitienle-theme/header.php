@@ -40,7 +40,7 @@ if (!defined('ABSPATH')) {
 			<?php endforeach; ?>
 		</ul>
 		<div class="cat-wrap">
-			<button class="btn cat-btn" type="button" aria-expanded="false" aria-controls="cat-drop" aria-haspopup="listbox">
+			<button class="cat-btn" type="button" aria-expanded="false" aria-controls="cat-drop" aria-haspopup="listbox">
 				<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
 				<span>Danh mục</span>
 			</button>
