@@ -8,13 +8,13 @@ if (!defined('ABSPATH')) {
 		<h1>Dịch vụ đổi tiền lẻ</h1>
 		<p>Từ 500đ đến 20.000đ. Gọi là có, giao tận nơi, phục vụ 24/7, không giới hạn số lượng. Nhân viên báo phí theo ngày.</p>
 		<p class="jump">
-			<a href="#catalogue">Catalogue mệnh giá</a>
+			<a href="#catalogue">Mục lục</a>
 			<a href="#faq">Câu hỏi thường gặp</a>
 		</p>
 		<a class="btn" href="tel:<?php echo esc_attr(doitienle_phone()); ?>"><?php echo esc_html(doitienle_call_label()); ?></a>
 	</header>
 
-	<section class="band to-cream">
+	<section class="band to-cream" id="menh-gia-chon">
 		<div class="wrap">
 			<h2>Chọn mệnh giá cần đổi</h2>
 			<p class="lede">Tiền mới đầy đủ mệnh giá, nguyên cọc, nguyên thếp, series liền! Hỗ trợ ship tận nhà 24/7</p>
@@ -31,114 +31,70 @@ if (!defined('ABSPATH')) {
 
 	<section class="band band-tint" id="catalogue">
 		<div class="wrap">
-			<h2>Catalogue mệnh giá</h2>
-			<p class="lede">Sáu mệnh giá đang có hàng, tiền mới xuất xưởng, nguyên cọc và nguyên thếp. Đơn sỉ lấy theo thếp, đơn lẻ lấy theo cọc — phí báo khi gọi.</p>
-			<div class="catalog">
-				<?php
-				$catalog = array(
-					array(
-						'500đ',
-						'Cọc 100 tờ',
-						'Còn hàng',
-						'Thối hóa đơn lẻ, tiền trả vé xe và gửi xe. Chỉ nhập đủ vòng quay 3–5 ngày, không chất tồn lâu vì chiếm chỗ. Tỷ lệ khuyến nghị 5% số tờ trong két.',
-					),
-					array(
-						'1.000đ',
-						'Cọc 100 tờ',
-						'Còn hàng',
-						'Thối quầy bán lẻ và thối giao hàng. Vòng quay nhanh, không chất quá 2 cọc một lần. Tỷ lệ khuyến nghị 8% số tờ trong két.',
-					),
-					array(
-						'2.000đ',
-						'Cọc 100 tờ',
-						'Còn hàng',
-						'Vừa phong bao nhỏ và túi mù, thối hóa đơn lẻ vài nghìn. Có thể cấp phát cho điểm bán kèm mệnh giá 5.000đ. Tỷ lệ khuyến nghị 12% số tờ.',
-					),
-					array(
-						'5.000đ',
-						'Thếp 10 cọc',
-						'Còn hàng',
-						'Lấp khoảng giữa 2.000đ và 10.000đ khi thối. Dùng cho phong bao cỡ vừa và hóa đơn tầm 20.000–50.000đ. Tỷ lệ khuyến nghị 20% số tờ trong két.',
-					),
-					array(
-						'10.000đ',
-						'Thếp 10 cọc',
-						'Còn hàng',
-						'Trục chính của két thối hóa đơn tầm 50.000–150.000đ. Mệnh giá lấy nhiều nhất, chiếm 35% số tờ trong cơ cấu khuyến nghị. Giao khối lớn được.',
-					),
-					array(
-						'20.000đ',
-						'Thếp 10 cọc',
-						'Còn hàng',
-						'Xếp tráp lễ vật, thối hóa đơn chẵn lớn và nhập về để chia điểm bán. Chiếm 20% số tờ trong cơ cấu két. Tiền cầm tay nhẹ, dễ đếm khi bàn giao.',
-					),
-				);
-				foreach ($catalog as $item) :
-					?>
-					<article>
-						<b><?php echo esc_html($item[0]); ?></b>
-						<span class="stock"><?php echo esc_html($item[2]); ?></span>
-						<p class="catalog-unit"><?php echo esc_html($item[1]); ?></p>
-						<p><?php echo esc_html($item[3]); ?></p>
-					</article>
-				<?php endforeach; ?>
-			</div>
-
-			<h3 class="subhead">Cách đặt theo catalogue</h3>
-			<div class="perk-grid">
-				<article>
-					<h3>Đơn lẻ — theo cọc</h3>
-					<p>Tối thiểu 1 cọc (100 tờ). Phù hợp cho hộ kinh doanh nhỏ, cá nhân đi lễ hoặc lì xì. Phí tính theo mệnh giá và số lượng, nhân viên báo khi gọi.</p>
-				</article>
-				<article>
-					<h3>Đơn sỉ — theo thếp</h3>
-					<p>Tối thiểu 1 thếp (10 cọc = 1.000 tờ). Dành cho đại lý, hộ kinh doanh nhận về chia lại. Phí sỉ thấp hơn, giao kín tận nơi theo lịch đã chốt.</p>
-				</article>
-				<article>
-					<h3>Đơn hỗn hợp — nhiều mệnh giá</h3>
-					<p>Đặt nhiều mệnh giá trong một lần giao. Ghi danh sách mệnh giá và số lượng khi gọi để nhân viên báo tổng phí trong ngày, không cần gọi nhiều lần.</p>
-				</article>
-			</div>
-
-			<h3 class="subhead">Bảng đặt nhanh theo nhu cầu</h3>
-			<div class="sheet-wrap">
-				<table class="sheet">
-					<thead>
-						<tr>
-							<th>Nhu cầu</th>
-							<th>Mệnh giá gợi ý</th>
-							<th>Số lượng tham khảo</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Thối quầy bán lẻ (hóa đơn 50.000–150.000đ)</td>
-							<td>10.000đ + 5.000đ + 2.000đ</td>
-							<td>35% + 20% + 12% theo số tờ, còn lại chia 1.000đ và 500đ</td>
-						</tr>
-						<tr>
-							<td>Phong bao, túi mù, lì xì nhỏ</td>
-							<td>2.000đ, 5.000đ, 10.000đ</td>
-							<td>1–3 cọc mỗi loại tùy số phong bao cần phát</td>
-						</tr>
-						<tr>
-							<td>Xếp tráp lễ vật, cưới hỏi</td>
-							<td>20.000đ, 50.000đ, 100.000đ</td>
-							<td>Tùy giá trị tráp; liên hệ để nhận tư vấn tổ hợp mệnh giá phù hợp</td>
-						</tr>
-						<tr>
-							<td>Lì xì Tết cho gia đình và đối tác</td>
-							<td>10.000đ, 20.000đ (tiền mới)</td>
-							<td>Tính theo số phong bao × số tờ mỗi bao; đặt trước 1–2 tuần vào dịp Tết</td>
-						</tr>
-						<tr>
-							<td>Đại lý nhập về chia lại</td>
-							<td>10.000đ và 20.000đ nguyên thếp</td>
-							<td>Đặt theo thếp, giữ băng niêm phong đến khi chia để đối soát seri</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
+			<h2>Mục lục nội dung</h2>
+			<p class="lede">Chọn phần bạn muốn xem — click là tới ngay.</p>
+			<nav class="toc-nav" aria-label="Mục lục trang dịch vụ">
+				<a href="#menh-gia-chon">
+					<span class="toc-num">01</span>
+					<span class="toc-label">Chọn mệnh giá cần đổi</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#dac-tinh">
+					<span class="toc-num">02</span>
+					<span class="toc-label">Đặc tính mệnh giá theo từng việc</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#kiem-tra">
+					<span class="toc-num">03</span>
+					<span class="toc-label">Kiểm tra cọc nguyên niêm phong</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#phi-thap">
+					<span class="toc-num">04</span>
+					<span class="toc-label">Phí thấp và ít tăng</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#doi-buon">
+					<span class="toc-num">05</span>
+					<span class="toc-label">Quyền lợi khách đổi buôn</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#cach-dat">
+					<span class="toc-num">06</span>
+					<span class="toc-label">Cách đặt tiền</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#ty-gia">
+					<span class="toc-num">07</span>
+					<span class="toc-label">Đổi mệnh giá (công cụ tính)</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#ly-do">
+					<span class="toc-num">08</span>
+					<span class="toc-label">Khách gọi lại vì những điều này</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#doi-tuong">
+					<span class="toc-num">09</span>
+					<span class="toc-label">Ai hay cần đổi</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#khu-vuc">
+					<span class="toc-num">10</span>
+					<span class="toc-label">Giao tận nơi ở các tỉnh này</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#faq">
+					<span class="toc-num">11</span>
+					<span class="toc-label">Câu hỏi thường gặp (FAQ)</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#tin-tuc">
+					<span class="toc-num">12</span>
+					<span class="toc-label">Tin tức mới</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+			</nav>
 		</div>
 	</section>
 
@@ -231,7 +187,7 @@ if (!defined('ABSPATH')) {
 		</div>
 	</section>
 
-	<section class="band band-ink to-cream">
+	<section class="band band-ink to-cream" id="phi-thap">
 		<div class="wrap split">
 			<div class="hero-photo">
 				<img src="<?php echo esc_url(doitienle_img('mark')); ?>" width="400" height="400" alt="Hình dịch vụ đổi tiền lẻ">
@@ -363,7 +319,7 @@ if (!defined('ABSPATH')) {
 		</div>
 	</section>
 
-	<section class="band">
+	<section class="band" id="cach-dat">
 		<div class="wrap">
 			<h2>Cách đặt tiền</h2>
 			<div class="info">
@@ -400,7 +356,7 @@ if (!defined('ABSPATH')) {
 		</div>
 	</section>
 
-	<section class="band band-ink band-loose to-cream">
+	<section class="band band-ink band-loose to-cream" id="gioi-thieu">
 		<div class="wrap">
 			<h2>Đổi tiền lẻ ở đâu thì gọi ngay</h2>
 			<div class="info">
@@ -422,7 +378,7 @@ if (!defined('ABSPATH')) {
 		</div>
 	</section>
 
-	<section class="band band-ink to-cream">
+	<section class="band band-ink to-cream" id="ly-do">
 		<div class="wrap">
 			<h2>Khách gọi lại vì những điều này</h2>
 			<p class="lede">Nguồn tiền ổn định suốt 8 năm, giao nhanh, phí ít đổi.</p>
@@ -475,7 +431,7 @@ if (!defined('ABSPATH')) {
 		</div>
 	</section>
 
-	<section class="band band-loose to-ink">
+	<section class="band band-loose to-ink" id="phi-on-dinh">
 		<div class="wrap">
 			<h2>Phí giữ mức thấp quanh năm</h2>
 			<div class="info">
@@ -485,7 +441,7 @@ if (!defined('ABSPATH')) {
 		</div>
 	</section>
 
-	<section class="band band-ink to-cream">
+	<section class="band band-ink to-cream" id="doi-tuong">
 		<div class="wrap">
 			<h2>Ai hay cần đổi</h2>
 			<div class="note-grid marks-b">
@@ -509,7 +465,7 @@ if (!defined('ABSPATH')) {
 		</div>
 	</section>
 
-	<section class="band band-tight to-ink">
+	<section class="band band-tight to-ink" id="khu-vuc">
 		<div class="wrap">
 			<h2>Giao tận nơi ở các tỉnh này</h2>
 			<p class="lede">Cơ sở tại Hà Nội, Hải Phòng và Hồ Chí Minh.</p>
@@ -522,7 +478,7 @@ if (!defined('ABSPATH')) {
 		</div>
 	</section>
 
-	<section class="band band-ink band-loose to-ink">
+	<section class="band band-ink band-loose to-ink" id="tin-tuc">
 		<div class="wrap">
 			<h2>Tin tức mới</h2>
 			<?php
