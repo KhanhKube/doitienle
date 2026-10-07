@@ -38,14 +38,17 @@ if (!defined('ABSPATH')) {
 					</a>
 				</li>
 			<?php endforeach; ?>
+			<?php if (is_page('dich-vu') || is_page_template('template-dich-vu.php')) : ?>
+			<li class="menu-cat-item">
+				<button class="menu-cat-btn" type="button" aria-expanded="false" aria-controls="menu-cat-drop" aria-haspopup="true">
+					<svg viewBox="0 0 24 24" aria-hidden="true" width="15" height="15"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+					<span>Danh mục</span>
+					<svg class="menu-cat-chevron" viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</button>
+				<ul id="menu-cat-drop" class="menu-cat-drop" role="menu" aria-label="Danh mục nội dung trang"></ul>
+			</li>
+			<?php endif; ?>
 		</ul>
-		<div class="cat-wrap">
-			<button class="cat-btn" type="button" aria-expanded="false" aria-controls="cat-drop" aria-haspopup="listbox">
-				<svg viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-				<span>Danh mục</span>
-			</button>
-			<ul id="cat-drop" class="cat-drop" role="listbox" aria-label="Danh mục nội dung"></ul>
-		</div>
 		<a class="btn head-call" href="tel:<?php echo esc_attr(doitienle_phone()); ?>"><?php echo esc_html(doitienle_call_label()); ?></a>
 	</div>
 </header>

@@ -231,51 +231,52 @@ main, .site-foot { position: relative; z-index: 1; }
 .menu a[aria-current="page"]:hover { background: linear-gradient(180deg, var(--gold-soft), var(--gold)); }
 .head-call { margin-left: 8px; }
 
-/* ─── Category dropdown ──────────────────────────────────────────────────── */
-.cat-wrap {
+/* ─── Danh mục trong menu ────────────────────────────────────────────────── */
+.menu-cat-item {
   position: relative;
-  margin-left: 0;
-  flex: none;
 }
-.cat-btn {
+.menu-cat-btn {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  min-height: 44px;
-  padding: 0 16px;
+  gap: 6px;
+  min-height: 40px;
+  padding: 0 14px;
   border-radius: 999px;
   border: 1.5px solid var(--red);
   background: transparent;
   color: var(--red);
   font-family: var(--display);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 800;
   cursor: pointer;
   white-space: nowrap;
-  box-shadow: none;
   -webkit-tap-highlight-color: transparent;
-  transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
-.cat-btn:hover,
-.cat-btn[aria-expanded="true"] {
+.menu-cat-btn:hover,
+.menu-cat-btn[aria-expanded="true"] {
   background: var(--red);
   color: var(--cream);
-  border-color: var(--red);
-  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.28);
-  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.22);
 }
-.cat-btn:active { transform: scale(0.97); }
-.cat-btn svg { flex: none; }
+.menu-cat-chevron {
+  transition: transform 0.22s;
+  flex: none;
+}
+.menu-cat-btn[aria-expanded="true"] .menu-cat-chevron {
+  transform: rotate(180deg);
+}
 
-.cat-drop {
-  display: block;
+.menu-cat-drop {
   position: absolute;
-  top: calc(100% + 10px);
-  right: 0;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) scale(0.95) translateY(-6px);
+  transform-origin: top center;
   z-index: 50;
-  min-width: 260px;
+  min-width: 270px;
   max-width: min(340px, calc(100vw - 32px));
-  max-height: min(70vh, 480px);
+  max-height: min(72vh, 500px);
   overflow-y: auto;
   overscroll-behavior: contain;
   margin: 0;
@@ -285,68 +286,49 @@ main, .site-foot { position: relative; z-index: 1; }
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
-  transform-origin: top right;
-  transform: scale(0.94) translateY(-6px);
   opacity: 0;
   visibility: hidden;
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.18s ease,
-              visibility 0s linear 0.18s;
   pointer-events: none;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease,
+              visibility 0s linear 0.2s;
 }
-.cat-drop:not([hidden]) {
-  transform: scale(1) translateY(0);
+.menu-cat-drop.is-open {
+  transform: translateX(-50%) scale(1) translateY(0);
   opacity: 1;
-  pointer-events: auto;
   visibility: visible;
-}
-.cat-drop.is-open {
-  transform: scale(1) translateY(0);
-  opacity: 1;
   pointer-events: auto;
-  visibility: visible;
-  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.18s ease,
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.2s ease,
               visibility 0s linear 0s;
 }
-.cat-drop li {
-  list-style: none;
-}
-.cat-drop a {
+.menu-cat-drop li { list-style: none; }
+.menu-cat-drop a {
   display: flex;
   align-items: center;
   gap: 10px;
   min-height: 44px;
-  padding: 10px 12px;
+  padding: 10px 14px;
   border-radius: 10px;
   color: var(--ink);
   font-family: var(--display);
   font-weight: 700;
-  font-size: 0.97rem;
+  font-size: 0.95rem;
   line-height: 1.35;
   text-decoration: none;
-  transition: background-color 0.15s, color 0.15s;
+  transition: background 0.15s;
   -webkit-tap-highlight-color: transparent;
 }
-.cat-drop a:hover,
-.cat-drop a:focus-visible {
+.menu-cat-drop a:hover,
+.menu-cat-drop a:focus-visible {
   background: rgba(251, 191, 36, 0.16);
-  color: var(--ink);
   outline: none;
 }
-.cat-drop a[aria-current="true"] {
-  background: linear-gradient(135deg, rgba(251, 191, 36, 0.22), rgba(245, 158, 11, 0.1));
+.menu-cat-drop a[aria-current="true"] {
+  background: rgba(220, 38, 38, 0.08);
   color: var(--accent);
 }
-.cat-drop a[aria-current="true"]::before {
-  content: "";
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--accent);
-  flex: none;
-}
-.cat-num {
+.menu-cat-num {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -358,40 +340,26 @@ main, .site-foot { position: relative; z-index: 1; }
   color: var(--accent);
   font-size: 0.75rem;
   font-weight: 800;
-  font-family: var(--display);
   transition: background 0.15s, color 0.15s;
 }
-.cat-drop a:hover .cat-num,
-.cat-drop a:focus-visible .cat-num {
-  background: linear-gradient(180deg, var(--gold-soft), var(--gold));
-  color: var(--ink);
-}
-.cat-drop a[aria-current="true"] .cat-num {
-  background: var(--accent);
-  color: var(--cream);
-}
-.cat-sep {
-  height: 1px;
-  background: var(--line);
-  margin: 4px 6px;
-}
+.menu-cat-drop a:hover .menu-cat-num,
+.menu-cat-drop a:focus-visible .menu-cat-num { background: var(--gold); color: var(--ink); }
+.menu-cat-drop a[aria-current="true"] .menu-cat-num { background: var(--accent); color: var(--cream); }
 
+/* Mobile: dropdown căn trái thay vì center */
 @media (max-width: 859px) {
-  .cat-drop {
+  .menu-cat-drop {
+    left: 0;
     right: 0;
-    left: auto;
-    min-width: 240px;
+    transform: scale(0.95) translateY(-6px);
+    min-width: 0;
+    max-width: 100%;
+  }
+  .menu-cat-drop.is-open {
+    transform: scale(1) translateY(0);
   }
 }
-@media (max-width: 420px) {
-  .cat-drop {
-    right: -8px;
-    min-width: calc(100vw - 32px);
-  }
-  .cat-btn span { display: none; }
-  .cat-btn { padding: 0 12px; min-width: 44px; justify-content: center; }
-}
-/* ─── End category dropdown ──────────────────────────────────────────────── */
+/* ─── End danh mục trong menu ─────────────────────────────────────────────── */
 
 .btn {
   display: inline-flex;
@@ -1304,7 +1272,6 @@ a.contact-mark:hover { color: var(--gold-soft); }
 
 @media (max-width: 859px) {
   .nav-toggle { display: inline-flex; margin-left: auto; }
-  .cat-wrap { margin-left: 0; }
   .cat-btn { padding: 0 12px; gap: 5px; }
   .menu {
     display: none;
