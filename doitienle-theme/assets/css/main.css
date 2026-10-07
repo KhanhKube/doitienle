@@ -211,11 +211,10 @@ main, .site-foot { position: relative; z-index: 1; }
   display: flex;
   align-items: center;
   gap: 4px;
-  margin: 0 0 0 auto;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
-.cat-wrap { margin-left: auto; }
 .menu a {
   display: inline-flex;
   align-items: center;
@@ -233,6 +232,7 @@ main, .site-foot { position: relative; z-index: 1; }
 /* ─── Category dropdown ──────────────────────────────────────────────────── */
 .cat-wrap {
   position: relative;
+  margin-left: auto;
 }
 .cat-btn {
   display: inline-flex;
@@ -1281,6 +1281,7 @@ a.contact-mark:hover { color: var(--gold-soft); }
 
 @media (max-width: 859px) {
   .nav-toggle { display: inline-flex; margin-left: auto; }
+  .cat-wrap { margin-left: 0; }
   .menu {
     display: none;
     position: absolute;
