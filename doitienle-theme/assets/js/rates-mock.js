@@ -1,15 +1,16 @@
-/* Số liệu mẫu. Thay file này bằng phản hồi API, giữ nguyên dạng { source, updatedAt, currencies }. */
+/* Mệnh giá Việt Nam. Mỗi vnd là giá trị một tờ. */
 window.doitienleRatesMock = {
-  source: "mock",
-  updatedAt: "2026-10-06T14:00:00+07:00",
+  source: "denom",
   currencies: [
-    { code: "VND", name: "Việt Nam Đồng", vnd: 1 },
-    { code: "USD", name: "Đô la Mỹ", vnd: 25420 },
-    { code: "EUR", name: "Euro", vnd: 27650 },
-    { code: "GBP", name: "Bảng Anh", vnd: 32800 },
-    { code: "JPY", name: "Yên Nhật", vnd: 172 },
-    { code: "KRW", name: "Won Hàn Quốc", vnd: 18.4 },
-    { code: "CNY", name: "Nhân dân tệ", vnd: 3520 },
-    { code: "THB", name: "Baht Thái", vnd: 748 }
+    { code: "500", name: "500đ", vnd: 500 },
+    { code: "1000", name: "1.000đ", vnd: 1000 },
+    { code: "2000", name: "2.000đ", vnd: 2000 },
+    { code: "5000", name: "5.000đ", vnd: 5000 },
+    { code: "10000", name: "10.000đ", vnd: 10000 },
+    { code: "20000", name: "20.000đ", vnd: 20000 },
+    { code: "50000", name: "50.000đ", vnd: 50000 },
+    { code: "100000", name: "100.000đ", vnd: 100000 },
+    { code: "200000", name: "200.000đ", vnd: 200000 },
+    { code: "500000", name: "500.000đ", vnd: 500000 }
   ]
 };

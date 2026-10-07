@@ -29,8 +29,8 @@ function doitienle_assets() {
     );
     wp_enqueue_style('doitienle-main', get_template_directory_uri() . '/assets/css/main.css', array('doitienle-font'), '2.5.3');
     wp_enqueue_script('doitienle-theme', get_template_directory_uri() . '/assets/js/theme.js', array(), '2.1.1', true);
-    wp_enqueue_script('doitienle-rates-mock', get_template_directory_uri() . '/assets/js/rates-mock.js', array(), '2.3.0', true);
-    wp_enqueue_script('doitienle-rates', get_template_directory_uri() . '/assets/js/rates.js', array('doitienle-rates-mock'), '2.3.0', true);
+    wp_enqueue_script('doitienle-rates-mock', get_template_directory_uri() . '/assets/js/rates-mock.js', array(), '2.4.0', true);
+    wp_enqueue_script('doitienle-rates', get_template_directory_uri() . '/assets/js/rates.js', array('doitienle-rates-mock'), '2.4.0', true);
 }
 add_action('wp_enqueue_scripts', 'doitienle_assets');
 

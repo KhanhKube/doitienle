@@ -6,7 +6,6 @@
   var toSelect = root.querySelector("[data-rate-to]");
   var amountInput = root.querySelector("[data-rate-amount]");
   var resultEl = root.querySelector("[data-rate-result]");
-  var timeEl = root.querySelector("[data-rate-time]");
   var swapBtn = root.querySelector("[data-rate-swap]");
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var table = {};
@@ -35,14 +34,15 @@
     return value;
   }
 
-  function fractionDigits(code, value) {
-    if (code === "VND" || code === "JPY" || code === "KRW") return 0;
+  function fractionDigits(value) {
+    var nearest = Math.round(value);
+    if (Math.abs(value - nearest) < 1e-6) return 0;
     if (value > 0 && value < 1) return 4;
     return 2;
   }
 
-  function formatAmount(value, code) {
-    var digits = fractionDigits(code, value);
+  function formatAmount(value) {
+    var digits = fractionDigits(value);
     return new Intl.NumberFormat("vi-VN", {
       minimumFractionDigits: 0,
       maximumFractionDigits: digits
@@ -56,15 +56,17 @@
     return amount * (fromRate / toRate);
   }
 
-  function paint(value, code) {
-    resultEl.textContent = formatAmount(value, code);
+  var names = {};
+
+  function paint(value) {
+    resultEl.textContent = formatAmount(value) + " tờ";
   }
 
-  function animateTo(next, code) {
+  function animateTo(next) {
     cancelAnimationFrame(frame);
     if (reduce) {
       shown = next;
-      paint(shown, code);
+      paint(shown);
       return;
     }
     var from = shown;
@@ -73,7 +75,7 @@
       var t = Math.min(1, (now - start) / 420);
       var eased = 1 - Math.pow(1 - t, 3);
       shown = from + (next - from) * eased;
-      paint(shown, code);
+      paint(shown);
       if (t < 1) frame = requestAnimationFrame(step);
       else shown = next;
     };
@@ -82,7 +84,7 @@
 
   function render() {
     var next = convert(parseAmount(amountInput.value), fromSelect.value, toSelect.value);
-    animateTo(next, toSelect.value);
+    animateTo(next);
   }
 
   function fillSelect(select, selected) {
@@ -90,7 +92,7 @@
     Object.keys(table).forEach(function (code) {
       var option = document.createElement("option");
       option.value = code;
-      option.textContent = code;
+      option.textContent = names[code] || code;
       if (code === selected) option.selected = true;
       select.appendChild(option);
     });
@@ -99,22 +101,13 @@
   loadRates().then(function (data) {
     data.currencies.forEach(function (item) {
       table[item.code] = item.vnd;
+      names[item.code] = item.name;
     });
-    fillSelect(fromSelect, table.USD ? "USD" : data.currencies[0].code);
-    fillSelect(toSelect, "VND");
-    var when = new Date(data.updatedAt);
-    timeEl.dateTime = data.updatedAt;
-    timeEl.textContent = new Intl.DateTimeFormat("vi-VN", {
-      hour: "2-digit",
-      minute: "2-digit",
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric",
-      timeZone: "Asia/Ho_Chi_Minh"
-    }).format(when);
+    fillSelect(fromSelect, "500");
+    fillSelect(toSelect, "500000");
     render();
   }).catch(function () {
-    resultEl.textContent = "Chưa có tỷ giá";
+    resultEl.textContent = "Chưa có mệnh giá";
   });
 
   amountInput.addEventListener("input", render);

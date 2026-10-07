@@ -17,7 +17,7 @@ $news = new WP_Query(array(
 			<p class="hero-in hero-in-2">Gọi là có, giao tận nơi, phục vụ 24/7.</p>
 			<div class="hero-actions hero-in hero-in-3">
 				<a class="btn" href="tel:<?php echo esc_attr(doitienle_phone()); ?>">Nhận báo giá</a>
-				<a class="btn btn-line" href="#ty-gia">Xem tỷ giá</a>
+				<a class="btn btn-line" href="#ty-gia">Xem mệnh giá</a>
 			</div>
 			<ul class="trust-row hero-in hero-in-4">
 				<li>
@@ -44,29 +44,26 @@ $news = new WP_Query(array(
 
 	<section class="band band-tight to-ink" id="ty-gia" aria-labelledby="tieu-de-ty-gia">
 		<div class="wrap">
-			<h2 id="tieu-de-ty-gia">Tỷ giá minh họa</h2>
-			<p class="lede">Số liệu mẫu để xem quy đổi. Phí đổi trong ngày vẫn do nhân viên báo khi gọi.</p>
+			<h2 id="tieu-de-ty-gia">Đổi mệnh giá</h2>
+			<p class="lede">Từ 500đ đến 500.000đ. Phí đổi trong ngày vẫn do nhân viên báo khi gọi.</p>
 			<div class="rate-card" data-rate-widget>
 				<label class="rate-field">
 					<span>Từ</span>
-					<select data-rate-from aria-label="Loại tiền nguồn"></select>
+					<select data-rate-from aria-label="Mệnh giá nguồn"></select>
 				</label>
 				<label class="rate-field">
-					<span>Số tiền</span>
-					<input data-rate-amount inputmode="decimal" value="100" autocomplete="off">
+					<span>Số tờ</span>
+					<input data-rate-amount inputmode="numeric" value="1000" autocomplete="off">
 				</label>
 				<button class="rate-swap" type="button" data-rate-swap aria-label="Hoán đổi chiều">
 					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7h11M15 4l3 3-3 3M17 17H6M9 14l-3 3 3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
 				</button>
 				<label class="rate-field">
 					<span>Sang</span>
-					<select data-rate-to aria-label="Loại tiền đích"></select>
+					<select data-rate-to aria-label="Mệnh giá đích"></select>
 				</label>
-				<p class="rate-result" data-rate-result aria-live="polite">0</p>
-				<p class="rate-meta">
-					<span class="rate-dot" aria-hidden="true"></span>
-					Số liệu mẫu, ghi lúc <time data-rate-time></time>
-				</p>
+				<p class="rate-result" data-rate-result aria-live="polite">0 tờ</p>
+				<p class="rate-meta">Quy đổi số tờ giữa các mệnh giá.</p>
 			</div>
 		</div>
 	</section>
