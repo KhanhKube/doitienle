@@ -66,28 +66,6 @@ if (!defined('ABSPATH')) {
 					</tbody>
 				</table>
 			</div>
-			<h3 class="subhead">Tỷ lệ tờ cho quầy</h3>
-			<p class="lede">Áp cho hóa đơn thường từ 50.000đ đến 150.000đ. Tỷ lệ tính trên số tờ, không tính trên số tiền.</p>
-			<div class="sheet-wrap">
-				<table class="sheet">
-					<thead>
-						<tr>
-							<th>Mệnh giá</th>
-							<th>Tỷ lệ số tờ</th>
-							<th>Ghi chú</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr><td>10.000đ</td><td>35%</td><td>Trục chính của két thối.</td></tr>
-						<tr><td>20.000đ</td><td>20%</td><td>Thối các hóa đơn chẵn lớn.</td></tr>
-						<tr><td>5.000đ</td><td>20%</td><td>Lấp khoảng giữa 2.000đ và 10.000đ.</td></tr>
-						<tr><td>2.000đ</td><td>12%</td><td>Dùng khi hóa đơn lẻ vài nghìn.</td></tr>
-						<tr><td>1.000đ</td><td>8%</td><td>Chỉ đủ vòng quay 3–5 ngày.</td></tr>
-						<tr><td>500đ</td><td>5%</td><td>Chiếm chỗ. Không nhập dư.</td></tr>
-					</tbody>
-				</table>
-			</div>
-			<p class="lede">Hóa đơn thường dưới 30.000đ thì đảo tỷ lệ: tăng 500đ–2.000đ, giảm 10.000đ và 20.000đ. Mệnh giá 50.000đ–200.000đ không đưa vào két thối.</p>
 		</div>
 	</section>
 
