@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Dịch vụ đổi tiền lẻ</title>
 	<link rel="icon" href="https://doitienle.com/wp-content/uploads/cropped-doitienletaihaiphong-32x32.jpg">
-	<link rel="stylesheet" href="../assets/css/main.css?v=22">
+	<link rel="stylesheet" href="../assets/css/main.css?v=2.6.5">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap">
 </head>
 <body>
@@ -19,27 +19,40 @@
 </div>
 <header class="site-head">
 	<div class="head-inner wrap">
-		<a class="logo" href="index.html"><img src="https://doitienle.com/wp-content/uploads/cropped-doitienletaihaiphong-192x192.jpg" width="40" height="40" alt="Đổi tiền lẻ"><span aria-hidden="true">Đổi tiền lẻ</span></a>
+		<a class="logo" href="index.html">
+			<img src="https://doitienle.com/wp-content/uploads/cropped-doitienletaihaiphong-192x192.jpg" width="40" height="40" alt="Đổi tiền lẻ">
+			<span aria-hidden="true">Đổi tiền lẻ</span>
+		</a>
 		<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-chinh">Mục</button>
 		<ul id="menu-chinh" class="menu">
 			<li><a href="index.html">Trang chủ</a></li>
 			<li><a href="dich-vu.html" aria-current="page">Đổi tiền lẻ</a></li>
 			<li><a href="tin-tuc.html">Tin tức</a></li>
+			<li class="menu-cat-item">
+				<button class="menu-cat-btn" type="button" aria-expanded="false" aria-controls="menu-cat-drop" aria-haspopup="true">
+					<svg viewBox="0 0 24 24" aria-hidden="true" width="15" height="15"><path d="M4 6h16M4 12h16M4 18h10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+					<span>Danh mục</span>
+					<svg class="menu-cat-chevron" viewBox="0 0 24 24" aria-hidden="true" width="14" height="14"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</button>
+				<ul id="menu-cat-drop" class="menu-cat-drop" role="menu" aria-label="Danh mục nội dung trang"></ul>
+			</li>
 		</ul>
 		<a class="btn head-call" href="tel:0858045555">Gọi 085.804.5555</a>
 	</div>
 </header>
+
 <main id="noi-dung">
 	<header class="page-head wrap">
 		<h1>Dịch vụ đổi tiền lẻ</h1>
 		<p>Từ 500đ đến 20.000đ. Gọi là có, giao tận nơi, phục vụ 24/7, không giới hạn số lượng. Nhân viên báo phí theo ngày.</p>
 		<p class="jump">
-			<a href="#catalogue">Catalogue</a>
-			<a href="#faq">FAQ</a>
+			<a href="#catalogue">Mục lục</a>
+			<a href="#faq">Câu hỏi thường gặp</a>
 		</p>
 		<a class="btn" href="tel:0858045555">Gọi 085.804.5555</a>
 	</header>
-	<section class="band to-cream">
+
+	<section class="band to-cream" id="menh-gia-chon">
 		<div class="wrap">
 			<h2>Chọn mệnh giá cần đổi</h2>
 			<p class="lede">Tiền mới đầy đủ mệnh giá, nguyên cọc, nguyên thếp, series liền! Hỗ trợ ship tận nhà 24/7</p>
@@ -53,20 +66,76 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="band band-tint" id="catalogue">
 		<div class="wrap">
-			<h2>Catalogue</h2>
-			<p class="lede">Sáu mệnh giá đang có hàng. Đơn sỉ lấy nguyên thếp. Đơn lẻ có thể lấy theo cọc, phí báo khi gọi.</p>
-			<div class="catalog">
-				<article><b>500đ</b><span class="stock">Còn hàng</span><p>Cọc 100 tờ</p><p>Thối hóa đơn lẻ. Chỉ nhập đủ vài ngày.</p></article>
-				<article><b>1.000đ</b><span class="stock">Còn hàng</span><p>Cọc 100 tờ</p><p>Thối quầy. Không chất tồn lâu.</p></article>
-				<article><b>2.000đ</b><span class="stock">Còn hàng</span><p>Cọc 100 tờ</p><p>Vừa phong bao nhỏ và túi mù.</p></article>
-				<article><b>5.000đ</b><span class="stock">Còn hàng</span><p>Thếp 10 cọc</p><p>Lấp khoảng giữa 2.000đ và 10.000đ.</p></article>
-				<article><b>10.000đ</b><span class="stock">Còn hàng</span><p>Thếp 10 cọc</p><p>Mệnh giá lấy nhiều nhất cho két thối.</p></article>
-				<article><b>20.000đ</b><span class="stock">Còn hàng</span><p>Thếp 10 cọc</p><p>Hóa đơn chẵn và xếp tráp cần khối.</p></article>
-			</div>
+			<h2>Mục lục nội dung</h2>
+			<p class="lede">Chọn phần bạn muốn xem — click là tới ngay.</p>
+			<nav class="toc-nav" aria-label="Mục lục trang dịch vụ">
+				<a href="#menh-gia-chon">
+					<span class="toc-num">01</span>
+					<span class="toc-label">Chọn mệnh giá cần đổi</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#dac-tinh">
+					<span class="toc-num">02</span>
+					<span class="toc-label">Đặc tính mệnh giá theo từng việc</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#kiem-tra">
+					<span class="toc-num">03</span>
+					<span class="toc-label">Kiểm tra cọc nguyên niêm phong</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#phi-thap">
+					<span class="toc-num">04</span>
+					<span class="toc-label">Phí thấp và ít tăng</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#doi-buon">
+					<span class="toc-num">05</span>
+					<span class="toc-label">Quyền lợi khách đổi buôn</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#cach-dat">
+					<span class="toc-num">06</span>
+					<span class="toc-label">Cách đặt tiền</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#ty-gia">
+					<span class="toc-num">07</span>
+					<span class="toc-label">Đổi mệnh giá (công cụ tính)</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#ly-do">
+					<span class="toc-num">08</span>
+					<span class="toc-label">Khách gọi lại vì những điều này</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#doi-tuong">
+					<span class="toc-num">09</span>
+					<span class="toc-label">Ai hay cần đổi</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#khu-vuc">
+					<span class="toc-num">10</span>
+					<span class="toc-label">Giao tận nơi ở các tỉnh này</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#faq">
+					<span class="toc-num">11</span>
+					<span class="toc-label">Câu hỏi thường gặp (FAQ)</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+				<a href="#tin-tuc">
+					<span class="toc-num">12</span>
+					<span class="toc-label">Tin tức mới</span>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+				</a>
+			</nav>
 		</div>
 	</section>
+
 	<section class="band" id="dac-tinh">
 		<div class="wrap">
 			<h2>Đặc tính mệnh giá theo từng việc</h2>
@@ -74,46 +143,22 @@
 			<div class="sheet-wrap">
 				<table class="sheet">
 					<thead>
-						<tr>
-							<th>Việc cần dùng</th>
-							<th>Mệnh giá hợp lý</th>
-							<th>Cách lấy</th>
-						</tr>
+						<tr><th>Việc cần dùng</th><th>Mệnh giá hợp lý</th><th>Cách lấy</th></tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Xếp tráp, lễ vật cần khối</td>
-							<td>20.000đ, 50.000đ, 100.000đ</td>
-							<td>Tờ lớn tạo mặt dày với ít cọc. 200.000đ chỉ khi cần số tiền cao mà chồng không được quá dày.</td>
-						</tr>
-						<tr>
-							<td>Phong bao nhỏ, túi mù</td>
-							<td>2.000đ, 5.000đ, 10.000đ</td>
-							<td>Vừa miệng bao. Từ 20.000đ trở lên khó gấp khít, dễ rách mép bao.</td>
-						</tr>
-						<tr>
-							<td>Thối tại quầy</td>
-							<td>500đ đến 10.000đ</td>
-							<td>Chia theo hóa đơn trung bình. Xem tỷ lệ số tờ bên dưới.</td>
-						</tr>
-						<tr>
-							<td>Nhập về để chia cho điểm bán</td>
-							<td>10.000đ đến 200.000đ, nguyên thếp</td>
-							<td>Giữ băng niêm phong đến lúc chia. Xé lẻ từ đầu thì mất mốc seri để đối soát.</td>
-						</tr>
+						<tr><td>Xếp tráp, lễ vật cần khối</td><td>20.000đ, 50.000đ, 100.000đ</td><td>Tờ lớn tạo mặt dày với ít cọc.</td></tr>
+						<tr><td>Phong bao nhỏ, túi mù</td><td>2.000đ, 5.000đ, 10.000đ</td><td>Vừa miệng bao. Từ 20.000đ trở lên khó gấp khít.</td></tr>
+						<tr><td>Thối tại quầy</td><td>500đ đến 10.000đ</td><td>Chia theo hóa đơn trung bình.</td></tr>
+						<tr><td>Nhập về để chia cho điểm bán</td><td>10.000đ đến 200.000đ, nguyên thếp</td><td>Giữ băng niêm phong đến lúc chia.</td></tr>
 					</tbody>
 				</table>
 			</div>
 			<h3 class="subhead">Tỷ lệ tờ cho quầy</h3>
-			<p class="lede">Áp cho hóa đơn thường từ 50.000đ đến 150.000đ. Tỷ lệ tính trên số tờ, không tính trên số tiền.</p>
+			<p class="lede">Áp cho hóa đơn thường từ 50.000đ đến 150.000đ.</p>
 			<div class="sheet-wrap">
 				<table class="sheet">
 					<thead>
-						<tr>
-							<th>Mệnh giá</th>
-							<th>Tỷ lệ số tờ</th>
-							<th>Ghi chú</th>
-						</tr>
+						<tr><th>Mệnh giá</th><th>Tỷ lệ số tờ</th><th>Ghi chú</th></tr>
 					</thead>
 					<tbody>
 						<tr><td>10.000đ</td><td>35%</td><td>Trục chính của két thối.</td></tr>
@@ -125,7 +170,6 @@
 					</tbody>
 				</table>
 			</div>
-			<p class="lede">Hóa đơn thường dưới 30.000đ thì đảo tỷ lệ: tăng 500đ–2.000đ, giảm 10.000đ và 20.000đ. Mệnh giá 50.000đ–200.000đ không đưa vào két thối.</p>
 		</div>
 	</section>
 
@@ -137,17 +181,17 @@
 				<div>
 					<ol class="steps">
 						<li>Đếm số thếp và số cọc, khớp với số đã chốt.</li>
-						<li>Băng giấy còn liền một mạch, không cắt dán. Chữ và mã trên băng còn đọc được. Băng rách, lệch hoặc có vệt keo mới thì để riêng, không nhận.</li>
-						<li>Seri tờ cuối lớn hơn seri tờ đầu đúng 99 số, cùng nhóm ký tự phía trước. Nhảy số, đứt quãng hoặc đổi nhóm ký tự trong một cọc là không đạt.</li>
+						<li>Băng giấy còn liền một mạch, không cắt dán. Băng rách, lệch hoặc có vệt keo mới thì để riêng, không nhận.</li>
+						<li>Seri tờ cuối lớn hơn seri tờ đầu đúng 99 số, cùng nhóm ký tự phía trước.</li>
 						<li>Seri in trên băng trùng seri tờ đầu.</li>
-						<li>Ký biên bản sau khi xong bốn bước trên. Cọc đã bóc băng không đổi lại, trừ lỗi ghi vào biên bản ngay tại chỗ.</li>
+						<li>Ký biên bản sau khi xong bốn bước trên.</li>
 					</ol>
 				</div>
 				<div>
 					<h3>Giữ cọc chưa bóc</h3>
 					<div class="keep">
 						<p>Để nằm ngang. Một chồng không quá 10 thếp.</p>
-						<p>Để khô thoáng. Tránh nắng và luồng lạnh thổi thẳng vào băng giấy, vì băng ẩm dễ bong.</p>
+						<p>Để khô thoáng. Tránh nắng và luồng lạnh thổi thẳng vào băng giấy.</p>
 						<p>Không thắt dây thun đè lên băng niêm phong.</p>
 						<p>Cọc đã đối seri để riêng với cọc chưa đối.</p>
 					</div>
@@ -156,9 +200,11 @@
 		</div>
 	</section>
 
-	<section class="band band-ink to-cream">
+	<section class="band band-ink to-cream" id="phi-thap">
 		<div class="wrap split">
-			<div class="hero-photo"><img src="https://doitienlehanoi.com/wp-content/uploads/tt.jpg" width="400" height="400" alt="Hình dịch vụ đổi tiền lẻ"></div>
+			<div class="hero-photo">
+				<img src="https://doitienlehanoi.com/wp-content/uploads/tt.jpg" width="400" height="400" alt="Hình dịch vụ đổi tiền lẻ">
+			</div>
 			<div>
 				<h2>Phí thấp và ít tăng</h2>
 				<p>Phí giữ ổn định quanh năm, chỉ tăng nhẹ vào dịp Tết do biến động thị trường. Nhiều nơi tăng đột ngột khi khan hàng. Bên này giữ mức phí thấp để khách yên tâm gọi lại.</p>
@@ -173,6 +219,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="band band-tint" id="doi-buon">
 		<div class="wrap">
 			<h2>Quyền lợi khách đổi buôn</h2>
@@ -180,7 +227,7 @@
 			<div class="perk-grid">
 				<article>
 					<h3>Gối đầu</h3>
-					<p>Chỉ mở cho đại lý đã nhận đủ hàng và đối soát khớp. Hạn mức và ngày tất toán chốt riêng khi gọi, không dùng một hạn mức cho mọi đơn.</p>
+					<p>Chỉ mở cho đại lý đã nhận đủ hàng và đối soát khớp. Hạn mức và ngày tất toán chốt riêng khi gọi.</p>
 				</article>
 				<article>
 					<h3>Giao kín</h3>
@@ -188,7 +235,7 @@
 				</article>
 				<article>
 					<h3>Lỗi đóng bó</h3>
-					<p>Thiếu tờ, seri đứt hoặc băng rách có sẵn, phát hiện lúc giao, được đổi bù trước khi ký. Sau khi ký, xử lý theo biên bản.</p>
+					<p>Thiếu tờ, seri đứt hoặc băng rách có sẵn, phát hiện lúc giao, được đổi bù trước khi ký.</p>
 				</article>
 			</div>
 		</div>
@@ -196,38 +243,60 @@
 
 	<section class="band" id="faq">
 		<div class="wrap">
-			<h2>FAQ</h2>
+			<h2>Câu hỏi thường gặp (FAQ)</h2>
 			<p class="lede">Những câu hay gặp trước khi chốt số lượng. Phí trong ngày vẫn do nhân viên đọc khi gọi 085.804.5555.</p>
+
+			<h3 class="subhead">Về phí và thanh toán</h3>
 			<div class="faq">
 				<details>
-					<summary>Phí tính ra sao?</summary>
-					<p>Phí tính theo mệnh giá, số thếp và ngày gọi. Nhân viên đọc phí trước khi chốt số lượng. Đã chốt thì không cộng thêm lúc giao.</p>
+					<summary>Phí đổi tiền lẻ tính ra sao?</summary>
+					<p>Phí tính theo mệnh giá, số lượng cọc/thếp và ngày gọi. Nhân viên đọc phí trước khi chốt đơn. Đã chốt thì không cộng thêm lúc giao.</p>
 				</details>
 				<details>
-					<summary>Catalogue này là tiền mới hay tiền đã lưu thông?</summary>
-					<p>Các mệnh giá trong catalogue là tiền mới, giao nguyên cọc hoặc nguyên thếp. Tiền cũ và tiền rách không có trong catalogue.</p>
-				</details>
-				<details>
-					<summary>Một cọc và một thếp có bao nhiêu tờ?</summary>
-					<p>Một cọc là 100 tờ. Một thếp là 10 cọc. Đơn sỉ lấy theo thếp. Đơn lẻ có thể lấy theo cọc.</p>
-				</details>
-				<details>
-					<summary>Giao sau khi chốt mất bao lâu?</summary>
-					<p>Giờ giao được hẹn lúc chốt số lượng và địa chỉ. Nội thành và tỉnh lân cận không dùng chung một mốc giờ.</p>
-				</details>
-				<details>
-					<summary>Có xuất hóa đơn đỏ không?</summary>
-					<p>Đây là đổi tiền mặt. Đại lý cần đối soát thì nói lúc gọi để có phiếu ghi số lượng, mệnh giá và phí. Hóa đơn VAT chỉ lập khi giao dịch đủ điều kiện và hai bên xác nhận từ đầu, không gắn sẵn với mọi đơn.</p>
+					<summary>Phí có thay đổi theo mùa không?</summary>
+					<p>Phí giữ ổn định quanh năm. Chỉ tăng nhẹ vào dịp Tết do cầu tăng mạnh và nguồn tiền khan hơn.</p>
 				</details>
 				<details>
 					<summary>Trả trước hay trả khi nhận?</summary>
-					<p>Đơn lẻ giao và trả cùng lúc. Đơn sỉ chuyển khoản theo số đã chốt, hoặc trả khi nhận. Đơn gối đầu trả theo kỳ đã thỏa thuận. Không giao nếu người nhận không đúng tên đã đăng ký.</p>
+					<p>Đơn lẻ giao và trả cùng lúc. Đơn sỉ chuyển khoản theo số đã chốt. Đơn gối đầu trả theo kỳ đã ký.</p>
+				</details>
+				<details>
+					<summary>Có xuất hóa đơn đỏ (VAT) không?</summary>
+					<p>Đây là giao dịch đổi tiền mặt. Hóa đơn VAT chỉ lập khi giao dịch đủ điều kiện và hai bên xác nhận từ đầu.</p>
+				</details>
+			</div>
+
+			<h3 class="subhead">Về hàng hóa và catalogue</h3>
+			<div class="faq">
+				<details>
+					<summary>Tiền trong catalogue là tiền mới hay tiền đã lưu thông?</summary>
+					<p>Toàn bộ catalogue là tiền mới chưa qua lưu thông, giao nguyên cọc niêm phong hoặc nguyên thếp.</p>
+				</details>
+				<details>
+					<summary>Một cọc và một thếp có bao nhiêu tờ?</summary>
+					<p>Một cọc là 100 tờ. Một thếp là 10 cọc (1.000 tờ). Đơn sỉ lấy theo thếp, đơn lẻ lấy theo cọc từ 1 cọc trở lên.</p>
+				</details>
+				<details>
+					<summary>Có thể đặt nhiều mệnh giá trong một đơn không?</summary>
+					<p>Được. Ghi danh sách mệnh giá và số lượng cụ thể khi gọi để nhân viên báo tổng phí trong ngày.</p>
+				</details>
+			</div>
+
+			<h3 class="subhead">Về giao hàng và khu vực</h3>
+			<div class="faq">
+				<details>
+					<summary>Giao sau khi chốt mất bao lâu?</summary>
+					<p>Nội thành Hà Nội thường giao trong ngày. Tỉnh lân cận và nội thành Sài Gòn hẹn riêng theo chuyến.</p>
+				</details>
+				<details>
+					<summary>Khu vực nào được giao tận nơi?</summary>
+					<p>Hà Nội, Hải Phòng, Thái Nguyên, Vĩnh Phúc, Hưng Yên, Nam Định, Hải Dương và nội thành Sài Gòn.</p>
 				</details>
 			</div>
 		</div>
 	</section>
 
-	<section class="band">
+	<section class="band" id="cach-dat">
 		<div class="wrap">
 			<h2>Cách đặt tiền</h2>
 			<div class="info">
@@ -237,6 +306,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="band band-tight to-ink" id="ty-gia" aria-labelledby="tieu-de-ty-gia">
 		<div class="wrap">
 			<h2 id="tieu-de-ty-gia">Đổi mệnh giá</h2>
@@ -262,7 +332,8 @@
 			</div>
 		</div>
 	</section>
-	<section class="band band-ink band-loose to-cream">
+
+	<section class="band band-ink band-loose to-cream" id="gioi-thieu">
 		<div class="wrap">
 			<h2>Đổi tiền lẻ ở đâu thì gọi ngay</h2>
 			<div class="info">
@@ -272,6 +343,7 @@
 			</div>
 		</div>
 	</section>
+
 	<section class="band band-tight to-ink" aria-labelledby="menh-gia">
 		<div class="wrap">
 			<h2 id="menh-gia">Mệnh giá đang đổi</h2>
@@ -285,98 +357,91 @@
 			</div>
 		</div>
 	</section>
-	<section class="band band-ink to-cream">
+
+	<section class="band band-ink to-cream" id="ly-do">
 		<div class="wrap">
 			<h2>Khách gọi lại vì những điều này</h2>
 			<p class="lede">Nguồn tiền ổn định suốt 8 năm, giao nhanh, phí ít đổi.</p>
 			<div class="bento rise">
-				<div class="tile tile-photo photo"><img src="https://doitienle.com/wp-content/uploads/1231321-1024x756.png" width="1024" height="756" alt="Tiền mới dùng để đổi"></div>
+				<div class="tile tile-photo photo"><img src="https://doitienle.com/wp-content/uploads/1231321-1024x756.png" width="1024" height="756" alt="Tiền mới dùng để đổi" loading="lazy"></div>
 				<article class="tile tile-accent fact-a"><h3><span data-count="8">8</span> năm</h3><p>Chưa lần nào hết nguồn tiền.</p></article>
 				<article class="tile fact-b"><h3>Nguyên thếp</h3><p>Nguyên cọc, seri liền khi giao.</p></article>
 				<article class="tile fact-c"><h3>Báo phí nhanh</h3><p>Gọi máy là nhân viên báo phí trong ngày.</p></article>
 				<div class="tile tile-photo shot"><img src="https://doitienle.com/wp-content/uploads/1.jpg" width="540" height="540" alt="Tiền mới giao cho khách"></div>
 			</div>
 			<div class="note-grid marks-a">
-				<article>
-					<h3>Nhận máy nhanh</h3>
-					<p>Nhân viên nhiệt tình, tiếp nhận và xử lý yêu cầu ngay khi khách gọi.</p>
-				</article>
-				<article>
-					<h3>Giao sớm</h3>
-					<p>Cam kết giao tiền sớm sau khi chốt số lượng và phí trong ngày.</p>
-				</article>
-				<article>
-					<h3>Hỗ trợ phí giao</h3>
-					<p>Có hỗ trợ phí giao trong nội thành, khách đỡ phải tự đi lấy.</p>
-				</article>
-				<article>
-					<h3>Đổi qua điện thoại</h3>
-					<p>Khách ở xa vẫn đổi được, giảm chi phí đi lại tới cửa hàng.</p>
-				</article>
-				<article>
-					<h3>Nhiều mệnh giá</h3>
-					<p>Từ 500đ đến 20.000đ. Khách chọn mệnh giá phù hợp việc đang cần.</p>
-				</article>
-				<article>
-					<h3>Cửa hàng tại Hà Nội</h3>
-					<p>Cơ sở 1 tại 83 Nguyễn Khang, Cầu Giấy, Hà Nội. Khách có thể tới lấy hoặc nhận giao.</p>
-				</article>
+				<article><h3>Nhận máy nhanh</h3><p>Nhân viên nhiệt tình, tiếp nhận và xử lý yêu cầu ngay khi khách gọi.</p></article>
+				<article><h3>Giao sớm</h3><p>Cam kết giao tiền sớm sau khi chốt số lượng và phí trong ngày.</p></article>
+				<article><h3>Hỗ trợ phí giao</h3><p>Có hỗ trợ phí giao trong nội thành, khách đỡ phải tự đi lấy.</p></article>
+				<article><h3>Đổi qua điện thoại</h3><p>Khách ở xa vẫn đổi được, giảm chi phí đi lại tới cửa hàng.</p></article>
+				<article><h3>Nhiều mệnh giá</h3><p>Từ 500đ đến 20.000đ. Khách chọn mệnh giá phù hợp việc đang cần.</p></article>
+				<article><h3>Cửa hàng tại Hà Nội</h3><p>Cơ sở 1 tại 83 Nguyễn Khang, Cầu Giấy, Hà Nội. Khách có thể tới lấy hoặc nhận giao.</p></article>
 			</div>
 		</div>
 	</section>
-	<section class="band band-loose to-ink">
+
+	<section class="band band-loose to-ink" id="phi-on-dinh">
 		<div class="wrap">
 			<h2>Phí giữ mức thấp quanh năm</h2>
 			<div class="info">
 				<p>Nhiều cơ sở tăng phí đột ngột khi khan tiền hoặc thiếu người đổi. Bên này giữ phí ổn định, chỉ tăng nhẹ vào Tết vì thị trường biến động.</p>
-				<p>Khách chọn gọi vì mức phí thấp. Muốn biết phí hôm nay, gọi hotline để nhân viên báo theo ngày. Khu vực chính là miền Bắc. Miền Nam giao trong nội thành Sài Gòn.</p>
+				<p>Khách chọn gọi vì mức phí thấp. Muốn biết phí hôm nay, gọi hotline để nhân viên báo theo ngày.</p>
 			</div>
 		</div>
 	</section>
-	<section class="band band-ink to-cream">
+
+	<section class="band band-ink to-cream" id="doi-tuong">
 		<div class="wrap">
 			<h2>Ai hay cần đổi</h2>
 			<div class="note-grid marks-b">
-				<article>
-					<h3>Hộ kinh doanh</h3>
-					<p>Cần tiền lẻ để thối cho khách, nhận số lượng lớn, giao tới cửa hàng.</p>
-				</article>
-				<article>
-					<h3>Đi chùa, đi lễ</h3>
-					<p>Đổi mệnh giá nhỏ trước ngày rằm, mùng một hoặc dịp lễ.</p>
-				</article>
-				<article>
-					<h3>Lì xì Tết</h3>
-					<p>Tiền mới, nguyên thếp, seri liền để lì xì cho gia đình và đối tác.</p>
-				</article>
-				<article>
-					<h3>Đổi buôn</h3>
-					<p>Nhận số lượng lớn, không giới hạn. Đơn vị đổi tiền lẻ uy tín, giao trong thời gian ngắn.</p>
-				</article>
+				<article><h3>Hộ kinh doanh</h3><p>Cần tiền lẻ để thối cho khách, nhận số lượng lớn, giao tới cửa hàng.</p></article>
+				<article><h3>Đi chùa, đi lễ</h3><p>Đổi mệnh giá nhỏ trước ngày rằm, mùng một hoặc dịp lễ.</p></article>
+				<article><h3>Lì xì Tết</h3><p>Tiền mới, nguyên thếp, seri liền để lì xì cho gia đình và đối tác.</p></article>
+				<article><h3>Đổi buôn</h3><p>Nhận số lượng lớn, không giới hạn. Đơn vị đổi tiền lẻ uy tín, giao trong thời gian ngắn.</p></article>
 			</div>
 		</div>
 	</section>
-	<section class="band band-tight to-ink">
+
+	<section class="band band-tight to-ink" id="khu-vuc">
 		<div class="wrap">
 			<h2>Giao tận nơi ở các tỉnh này</h2>
 			<p class="lede">Cơ sở tại Hà Nội, Hải Phòng và Hồ Chí Minh.</p>
 			<p class="lede">Địa chỉ giao dịch: 83 Nguyễn Khang, Cầu Giấy, Hà Nội.</p>
 			<div class="places rise">
-				<span>Hà Nội</span><span>Hải Phòng</span><span>Nội thành Sài Gòn</span><span>Thái Nguyên</span><span>Vĩnh Phúc</span><span>Hưng Yên</span><span>Nam Định</span><span>Hải Dương</span>
+				<span>Hà Nội</span><span>Hải Phòng</span><span>Nội thành Sài Gòn</span>
+				<span>Thái Nguyên</span><span>Vĩnh Phúc</span><span>Hưng Yên</span>
+				<span>Nam Định</span><span>Hải Dương</span>
 			</div>
 		</div>
 	</section>
-	<section class="band band-ink band-loose to-ink">
+
+	<section class="band band-ink band-loose to-ink" id="tin-tuc">
 		<div class="wrap">
 			<h2>Tin tức mới</h2>
 			<div class="rail">
-				<article class="story rise"><a class="story-hit" href="tin-tuc.html"><img src="https://doitienle.com/wp-content/uploads/1.jpg" alt="Dịch vụ đổi tiền lẻ, tiền mới tại Hà Nội"><div><h3>Dịch vụ đổi tiền lẻ, tiền mới tại Hà Nội</h3><p class="clamp">Phí thấp, giao tận nơi, nhận số lượng lớn. Tiền nguyên cọc, seri liền.</p></div></a></article>
-				<article class="story rise"><a class="story-hit" href="tin-tuc.html"><img src="https://doitienle.com/wp-content/uploads/1231321-1024x756.png" alt="Đổi tiền lẻ mới Tết 2027"><div><h3>Đổi tiền lẻ mới Tết 2027</h3><p class="clamp">Nhu cầu tiền mặt tăng khi Tết đến gần. Gọi để nghe phí trong ngày.</p></div></a></article>
-				<article class="story rise"><a class="story-hit" href="tin-tuc.html"><img src="https://doitienle.com/wp-content/uploads/471497846_122205551258080823_4124625874548649458_n.jpg" alt="Dịch vụ đổi tiền lẻ Tết 2027"><div><h3>Dịch vụ đổi tiền lẻ Tết 2027</h3><p class="clamp">Tiền mới dùng lì xì. Nguyên thếp, giao trong nội thành.</p></div></a></article>
+				<article class="story rise">
+					<a class="story-hit" href="tin-tuc.html">
+						<img src="https://doitienle.com/wp-content/uploads/1.jpg" alt="Dịch vụ đổi tiền lẻ, tiền mới tại Hà Nội">
+						<div><h3>Dịch vụ đổi tiền lẻ, tiền mới tại Hà Nội</h3><p class="clamp">Phí thấp, giao tận nơi, nhận số lượng lớn. Tiền nguyên cọc, seri liền.</p></div>
+					</a>
+				</article>
+				<article class="story rise">
+					<a class="story-hit" href="tin-tuc.html">
+						<img src="https://doitienle.com/wp-content/uploads/1231321-1024x756.png" alt="Đổi tiền lẻ mới Tết 2027">
+						<div><h3>Đổi tiền lẻ mới Tết 2027</h3><p class="clamp">Nhu cầu tiền mặt tăng khi Tết đến gần. Gọi để nghe phí trong ngày.</p></div>
+					</a>
+				</article>
+				<article class="story rise">
+					<a class="story-hit" href="tin-tuc.html">
+						<img src="https://doitienle.com/wp-content/uploads/471497846_122205551258080823_4124625874548649458_n.jpg" alt="Dịch vụ đổi tiền lẻ Tết 2027">
+						<div><h3>Dịch vụ đổi tiền lẻ Tết 2027</h3><p class="clamp">Tiền mới dùng lì xì. Nguyên thếp, giao trong nội thành.</p></div>
+					</a>
+				</article>
 			</div>
 		</div>
 	</section>
 </main>
+
 <footer class="site-foot">
 	<span class="spark" aria-hidden="true"></span>
 	<div class="wrap foot-grid">
@@ -391,8 +456,8 @@
 	<p class="copy wrap">© 2026 Đổi tiền lẻ tại Hà Nội</p>
 </footer>
 <a class="btn dock" href="tel:0858045555">Gọi 085.804.5555</a>
-<script src="../assets/js/rates-mock.js?v=11"></script>
-<script src="../assets/js/rates.js?v=11"></script>
-<script src="../assets/js/theme.js?v=7"></script>
+<script src="../assets/js/rates-mock.js?v=2.4.0"></script>
+<script src="../assets/js/rates.js?v=2.4.0"></script>
+<script src="../assets/js/theme.js?v=2.2.2"></script>
 </body>
 </html>
