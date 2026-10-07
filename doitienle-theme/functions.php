@@ -27,7 +27,7 @@ function doitienle_assets() {
         array(),
         null
     );
-    wp_enqueue_style('doitienle-main', get_template_directory_uri() . '/assets/css/main.css', array('doitienle-font'), '2.6.5');
+    wp_enqueue_style('doitienle-main', get_template_directory_uri() . '/assets/css/main.css', array('doitienle-font'), '2.7.0');
     wp_enqueue_script('doitienle-theme', get_template_directory_uri() . '/assets/js/theme.js', array(), '2.2.2', true);
     wp_enqueue_script('doitienle-rates-mock', get_template_directory_uri() . '/assets/js/rates-mock.js', array(), '2.4.0', true);
     wp_enqueue_script('doitienle-rates', get_template_directory_uri() . '/assets/js/rates.js', array('doitienle-rates-mock'), '2.4.0', true);
@@ -205,6 +205,9 @@ add_filter('pings_open', '__return_false', 20);
 function doitienle_body_class($classes) {
     if (is_front_page()) {
         $classes[] = 'is-front-page';
+    }
+    if (is_page('dich-vu') || is_page_template('template-dich-vu.php')) {
+        $classes[] = 'page-dich-vu';
     }
     return $classes;
 }

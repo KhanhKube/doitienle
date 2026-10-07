@@ -56,6 +56,12 @@ p,
 body.is-front-page {
   padding-bottom: 0;
 }
+
+/* Trang dịch vụ: section cuối là band-ink tối, padding-bottom body
+   tạo khoảng cream lộ bên dưới — set về safe-area đủ cho dock */
+body.page-dich-vu {
+  padding-bottom: calc(72px + env(safe-area-inset-bottom));
+}
 :root {
   --red: #DC2626;
   --red-dark: #B91C1C;
@@ -1313,11 +1319,114 @@ a.contact-mark:hover { color: var(--gold-soft); }
   .dock { left: 16px; right: 16px; }
 }
 
+/* ─── Mobile refinements ─────────────────────────────────────────────────── */
+@media (max-width: 767px) {
+  .wrap { width: calc(100% - 32px); }
+
+  /* Grid layouts → single column */
+  .hero, .split, .foot-grid,
+  .story-lead .story-hit, .story-row .story-hit,
+  .reasons, .bento, .note-grid, .check-grid, .perk-grid, .catalog {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+  }
+
+  /* Bands: giảm padding trên mobile */
+  .band { padding: 48px 0; }
+  .band-tight { padding: 28px 0 20px; }
+  .band-tight.to-ink,
+  .band-tight.to-cream { padding-bottom: 36px; }
+  .band-loose { padding: 64px 0 48px; }
+
+  /* Top info: ẩn dòng địa chỉ, chỉ giữ chào */
+  .top-info .wrap { flex-direction: column; gap: 0; }
+  .top-info .wrap span:last-child { display: none; }
+
+  /* Rail news */
+  .rail { grid-template-columns: 1fr; gap: 16px; }
+  .story-lead .story-hit > div,
+  .story-row .story-hit > div { padding: 16px 16px 20px; }
+
+  /* Bento */
+  .bento { grid-template-areas: "photo" "facta" "factb" "factc" "shot"; }
+  .photo, .fact-a, .fact-b, .fact-c, .shot { grid-area: auto; }
+  .tile-photo { min-height: 180px; }
+  .tile-photo img { min-height: 180px; }
+
+  /* Hero */
+  .hero { padding-top: 20px; }
+  .hero-actions { display: grid; width: 100%; }
+  .hero-actions .btn { width: 100%; }
+  .hero-photo img, .story-lead img, .story-row img { height: 200px; min-height: 0; }
+
+  /* Rate widget: stack vertically */
+  .rate-card { grid-template-columns: 1fr; gap: 10px; padding: 16px; }
+  .rate-swap { justify-self: center; }
+
+  /* Denoms & denom-row */
+  .denom-row { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+  .denoms article { min-width: 120px; padding: 16px 10px; font-size: 1.4rem; }
+
+  /* Catalog */
+  .catalog { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* FAQ details: tăng padding tap target */
+  .faq details { padding: 14px 14px; }
+  .faq summary { font-size: 1rem; }
+
+  /* Steps */
+  .steps li { grid-template-columns: 32px minmax(0, 1fr); gap: 10px; }
+  .steps li::before { width: 32px; height: 32px; font-size: 0.9rem; }
+
+  /* Perk grid */
+  .perk-grid article { padding: 16px; }
+
+  /* Note grid: reduce heading size */
+  .note-grid h3 { font-size: 1.15rem; }
+
+  /* Dock button: full width */
+  .dock { left: 16px; right: 16px; bottom: calc(12px + env(safe-area-inset-bottom)); }
+  .dock.btn { border-radius: 14px; }
+
+  /* Table: allow horizontal scroll with visual cue */
+  .sheet-wrap { -webkit-overflow-scrolling: touch; }
+  .sheet { min-width: 500px; }
+
+  /* Jump links */
+  .jump { gap: 10px 16px; font-size: 0.95rem; }
+
+  /* toc-nav: 1 cột */
+  .toc-nav { grid-template-columns: 1fr; gap: 8px; }
+
+  /* Menu dropdown danh mục */
+  .menu-cat-drop {
+    min-width: 0;
+    width: calc(100vw - 32px);
+    left: 50%;
+    transform: translateX(-50%) scale(0.95) translateY(-4px);
+    max-height: 60vh;
+  }
+  .menu-cat-drop.is-open {
+    transform: translateX(-50%) scale(1) translateY(0);
+  }
+
+  /* h1 size */
+  h1 { font-size: clamp(2rem, 8vw, 3.5rem); }
+  h2 { font-size: clamp(1.6rem, 5.5vw, 2.5rem); }
+}
+
 @media (max-width: 420px) {
+  /* Ẩn text logo, chỉ giữ icon */
   .logo span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
   .denom-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  /* Menu cat btn: ẩn chữ "Danh mục", chỉ giữ icon */
+  .menu-cat-btn span:not(.visually-hidden) { display: none; }
+  .menu-cat-btn { padding: 0 10px; gap: 4px; }
 }
 
 @media (max-width: 380px) {
-  .head-call { padding: 0 12px; font-size: 14px; }
+  .head-call { padding: 0 10px; font-size: 13px; }
+  .menu-cat-btn { padding: 0 8px; }
+  .band { padding: 36px 0; }
 }
+/* ─── End mobile refinements ─────────────────────────────────────────────── */
